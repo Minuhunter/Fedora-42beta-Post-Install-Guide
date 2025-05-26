@@ -2,7 +2,6 @@
 Things to do after installing Fedora 42
 
 ## RPM Fusion & Terra
-
 * Fedora has disabled the repositories for a lot of free and non-free .rpm packages by default. Follow this if you want to use non-free software like Steam, Discord and some multimedia codecs etc. As a general rule of thumb it is advised to do this to get access to many mainstream useful programs.
 * Enable third party repositories by pasting the following into the terminal: 
 * `sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm`
@@ -49,17 +48,6 @@ sudo fwupdmgr update
 * Wait for atleast 5 mins before rebooting, to let the kernel module get built.
 * `modinfo -F version nvidia` #Check if the kernel module is built.
 * Reboot
-
-## ~~Battery Life (Deprecated)~~
-* ~~Follow this if you have a Laptop and are facing sub optimal battery backup.~~
-* ~~power-profiles-daemon which come pre-configured on fedora works well on a great majority of systems but still in case you're facing sub-optimal battery backup you try installing tlp by:~~
-* ~~`sudo dnf install tlp tlp-rdw`~~
-* ~~and mask power-profiles-daemon by:~~
-* ~~`sudo systemctl mask power-profiles-daemon`~~
-* ~~Also install powertop by:~~
-* ~~`sudo dnf install powertop`~~
-* ~~`sudo powertop --auto-tune`~~
-* Edit: Fedora comes preinstalled with [Tuned](https://fedoraproject.org/wiki/Changes/TunedAsTheDefaultPowerProfileManagementDaemon) which works well on its own now and all the aforementioned changes are now unnecessary. Just follow [HW video acceleration](https://github.com/devangshekhawat/Fedora-40-Post-Install-Guide/blob/main/README.md#hw-video-acceleration) for better battery backup. 
 
 ## Media Codecs
 * Install these to get proper multimedia playback.
@@ -141,10 +129,16 @@ DNSOverTLS=yes
 * Gnome software autostarts on boot for some reason, even though it is not required on every boot unless you want it to do updates in the background, this takes at least 100MB of RAM upto 900MB (as reported anecdotically). You can stop it from autostarting by:
 * `sudo rm /etc/xdg/autostart/org.gnome.Software.desktop`
 
+## Gnome Settings
+* Miltutasking: fixed workspaces
+* Keyboard: Shortcuts: Move window to workspace x
+
 ## Gnome Extensions [Optional]
 * Suggestions for good utilities to extend the capabilities of your system
 * Don't install these if you are using a different spin of Fedora.
 * Pop Shell - run `sudo dnf install -y gnome-shell-extension-pop-shell xprop` to install it.
+* [Space Bar](https://github.com/christopher-l/space-bar)
+* 
 * [GSconnect](https://extensions.gnome.org/extension/1319/gsconnect/) - run `sudo dnf install nautilus-python` for full support. then `sudo firewall-cmd --permanent --zone=public --add-service=kdeconnect`
 * [Gesture Improvements](https://extensions.gnome.org/extension/4245/gesture-improvements/)
 * [Quick Settings Tweaker](https://github.com/qwreey75/quick-settings-tweaks)
@@ -163,7 +157,7 @@ DNSOverTLS=yes
 * [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
 * [Wireless HID](https://extensions.gnome.org/extension/4228/wireless-hid/)
 * [Logo Menu](https://extensions.gnome.org/extension/4451/logo-menu/)
-* [Space Bar](https://github.com/christopher-l/space-bar)
+
 
 ## Apps [Optional]
 * Packages for Rar and 7z compressed files support:
